@@ -4,56 +4,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Garima Kumar | Portfolio</title>
+
+  <title>Garima Kumar | Student Portfolio</title>
 
   <style>
     :root {
-      --background: #fbf9f6;
-      --white: #ffffff;
-      --text: #333333;
-      --muted: #696969;
-      --accent: #b87583;
-      --border: #e9e2df;
+      --background: #ffffff;
+      --soft-background: #fff9fa;
+      --text: #342c35;
+      --muted: #766b78;
+      --accent: #bf7189;
+      --border: #f0dce3;
+      --tag: #f9eaf0;
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 90px;
     }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: var(--background);
       color: var(--text);
-      line-height: 1.7;
+      line-height: 1.8;
     }
 
     nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.97);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 8%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 15px;
-      padding: 22px 8%;
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
+      gap: 12px;
     }
 
     .logo {
-      font-size: 20px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 25px;
       font-weight: bold;
-      color: var(--text);
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
     }
 
     nav a {
-      text-decoration: none;
       color: var(--muted);
-      margin-left: 20px;
+      text-decoration: none;
       font-size: 14px;
     }
 
@@ -64,44 +80,47 @@
     section {
       padding: 75px 9%;
       border-bottom: 1px solid var(--border);
+      scroll-margin-top: 70px;
     }
 
     .hero {
-      min-height: 430px;
+      min-height: 440px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
+      background: var(--white, #ffffff);
     }
 
     .eyebrow {
       color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
       font-size: 13px;
       font-weight: bold;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 15px;
+      margin-bottom: 16px;
     }
 
-    h1, h2 {
+    h1,
+    h2 {
       font-family: Georgia, "Times New Roman", serif;
-      font-weight: normal;
+      line-height: 1.25;
     }
 
     h1 {
-      font-size: clamp(42px, 7vw, 68px);
-      line-height: 1.15;
-      margin-bottom: 18px;
+      font-size: clamp(42px, 6vw, 64px);
+      margin-bottom: 20px;
     }
 
     h2 {
-      font-size: 36px;
-      margin-bottom: 25px;
+      font-size: clamp(30px, 4vw, 40px);
+      margin-bottom: 24px;
     }
 
     h3 {
       font-size: 20px;
-      margin-bottom: 8px;
+      line-height: 1.5;
+      margin-bottom: 10px;
     }
 
     p {
@@ -110,14 +129,14 @@
     }
 
     .hero-description {
-      max-width: 620px;
+      max-width: 720px;
       font-size: 17px;
     }
 
     .button {
       display: inline-block;
       margin-top: 18px;
-      padding: 11px 23px;
+      padding: 10px 22px;
       background: var(--accent);
       color: white;
       text-decoration: none;
@@ -129,58 +148,78 @@
       opacity: 0.88;
     }
 
+    .soft-section {
+      background: var(--soft-background);
+    }
+
     .card {
-      background: var(--white);
+      background: white;
       border: 1px solid var(--border);
       border-radius: 10px;
       padding: 25px;
-      margin-bottom: 18px;
     }
 
     .skills {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
+      gap: 12px;
+      margin-top: 20px;
     }
 
     .skill {
-      background: #f3e9eb;
-      color: #704b54;
-      padding: 8px 14px;
-      border-radius: 4px;
+      display: inline-block;
+      padding: 8px 15px;
+      background: var(--tag);
+      color: #92536a;
+      border-radius: 5px;
       font-size: 14px;
     }
 
-    .contact-link {
+    .email {
       color: var(--accent);
-      text-decoration: none;
+      text-decoration: underline;
       overflow-wrap: anywhere;
+      font-weight: bold;
     }
 
     footer {
+      padding: 25px 8%;
       text-align: center;
-      padding: 25px 10px;
-      color: var(--muted);
+      background: var(--soft-background);
       font-size: 13px;
     }
 
-    @media (max-width: 600px) {
+    footer p {
+      margin: 0;
+    }
+
+    @media (max-width: 650px) {
       nav {
-        padding: 18px 6%;
+        padding: 15px 6%;
+      }
+
+      .logo {
+        font-size: 22px;
+      }
+
+      .nav-links {
+        gap: 14px;
       }
 
       nav a {
-        margin-left: 0;
-        margin-right: 12px;
+        font-size: 13px;
       }
 
       section {
         padding: 55px 7%;
       }
 
-      h2 {
-        font-size: 30px;
+      .hero {
+        min-height: 390px;
+      }
+
+      .card {
+        padding: 20px;
       }
     }
   </style>
@@ -188,9 +227,11 @@
 
 <body>
 
+  <!-- Navigation -->
   <nav>
-    <div class="logo">Garima Kumar</div>
-    <div>
+    <div class="logo">Garima <span>Kumar.</span></div>
+
+    <div class="nav-links">
       <a href="#about">About</a>
       <a href="#education">Education</a>
       <a href="#skills">Skills</a>
@@ -198,50 +239,72 @@
     </div>
   </nav>
 
+  <!-- Home -->
   <section class="hero" id="home">
-    <p class="eyebrow">BSc Microbiology Student</p>
-    <h1>Hello, I'm<br>Garima Kumar.</h1>
-    <p class="hero-description">
-      I am a microbiology student interested in learning about microorganisms,
-      biological sciences, and their applications in healthcare and the environment.
-      I look forward to developing my knowledge through academic learning and
-      future opportunities.
-    </p>
-    <a class="button" href="#about">Get to Know Me</a>
-  </section>
+    <p class="eyebrow">Student Portfolio</p>
 
-  <section id="about">
-    <p class="eyebrow">Introduction</p>
-    <h2>About Me</h2>
-    <p>
-      I am currently pursuing a Bachelor of Science in Microbiology at Lovely
-      Professional University. As a fresher, I am building my academic foundation
-      and developing an understanding of microbiology and related biological
-      sciences.
-    </p>
-    <p>
-      I am eager to learn, improve my abilities, and gain experience through
+    <h1>Hello, I'm<br>Garima Kumar.</h1>
+
+    <p class="hero-description">
+      I am a BSc Microbiology student building my academic understanding
+      of microorganisms, life sciences, and biological processes. I am
+      eager to learn, develop my knowledge, and gain experience through
       academic activities and future opportunities.
     </p>
+
+    <a class="button" href="#about">About Me</a>
   </section>
 
+  <!-- About -->
+  <section id="about" class="soft-section">
+    <p class="eyebrow">Introduction</p>
+
+    <h2>About Me</h2>
+
+    <p>
+      I am currently pursuing a Bachelor of Science (BSc) in Microbiology
+      at Lovely Professional University.
+    </p>
+
+    <p>
+      As a fresher, I am developing my understanding of microbiology and
+      related biological sciences. I am interested in learning more about
+      microorganisms and their importance in health and the environment.
+    </p>
+
+    <p>
+      I look forward to improving my knowledge, gaining experience, and
+      exploring future opportunities related to my field of study.
+    </p>
+  </section>
+
+  <!-- Education -->
   <section id="education">
     <p class="eyebrow">Academic Background</p>
+
     <h2>Education</h2>
 
     <div class="card">
       <h3>Bachelor of Science (BSc) in Microbiology</h3>
-      <p><strong>University:</strong> Lovely Professional University</p>
-      <p><strong>Study Period:</strong> 2026–2029</p>
+
+      <p>
+        <strong>University:</strong> Lovely Professional University
+      </p>
+
+      <p>
+        <strong>Study Period:</strong> 2026–2029
+      </p>
     </div>
   </section>
 
-  <section id="skills">
-    <p class="eyebrow">My Foundation</p>
-    <h2>Skills & Interests</h2>
+  <!-- Skills -->
+  <section id="skills" class="soft-section">
+    <p class="eyebrow">Developing Knowledge</p>
+
+    <h2>Skills &amp; Knowledge</h2>
+
     <p>
-      As a student and fresher, I am continuing to develop my knowledge and skills
-      through my studies.
+      Foundational knowledge and abilities I am developing as a student.
     </p>
 
     <div class="skills">
@@ -253,28 +316,38 @@
     </div>
   </section>
 
+  <!-- Contact -->
   <section id="contact">
     <p class="eyebrow">Get in Touch</p>
+
     <h2>Contact</h2>
-    <p>
-      I welcome opportunities to learn, connect, and grow in the field of
-      microbiology.
-    </p>
-    <p>
-      <strong>Email:</strong>
-      <a class="contact-link"
-         href="mailto:neelamsaniagarima@gmail.com">
-        neelamsaniagarima@gmail.com
-      </a>
-    </p>
+
+    <div class="card">
+      <p>
+        I welcome academic connections and learning opportunities related
+        to microbiology and life sciences.
+      </p>
+
+      <p>
+        <strong>Email:</strong>
+        <a
+          class="email"
+          href="mailto:neelamsaniagarima@gmail.com"
+        >neelamsaniagarima@gmail.com</a>
+      </p>
+    </div>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>© <span id="year"></span> Garima Kumar. All rights reserved.</p>
+    <p>
+      &copy; <span id="year"></span> Garima Kumar · Student Portfolio
+    </p>
   </footer>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
   </script>
 
 </body>
